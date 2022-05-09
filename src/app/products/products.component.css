@@ -1,0 +1,13 @@
+.fvrt-btn-wrppr{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.fvrt-btn{
+  float: left;
+  width: 39px;
+  height: 39px;
+  background: url(https://cdn.dsmcdn.com/web/production/favorite-heart.svg);
+  background-size: cover;
+}
