@@ -9,16 +9,16 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./favorites.component.css'],
 })
 export class FavoritesComponent implements OnInit {
-  data = data;
 
+  data = data;
   user: any;
   favData: any[] = [];
 
   fillFavorites() {
-    this.favData = []
+    this.favData = [];
     for (let i = 0; i < data.length; i++) {
-      if(this.user.favorites.includes(data[i].id)) {
-        this.favData.push(data[i])
+      if (this.user.favorites.includes(data[i].id)) {
+        this.favData.push(data[i]);
       }
     }
   }

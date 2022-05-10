@@ -23,8 +23,6 @@ export class ProductsComponent implements OnInit {
         .subscribe((res: any) => {
           console.log(res);
           console.log(data);
-
-
           window.location = '/products' as any;
         });
     } else {
@@ -33,7 +31,6 @@ export class ProductsComponent implements OnInit {
         .subscribe((res: any) => {
           console.log(res);
           console.log(data);
-
           window.location = '/products' as any;
         });
     }

@@ -9,34 +9,31 @@ import { TodosComponent } from './todos/todos.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path:'products',
-    component:ProductsComponent
+    path: 'products',
+    component: ProductsComponent,
   },
   {
-    path:'todos',
-    component:TodosComponent,
-    canActivate: [LoginGuard]
-
+    path: 'todos',
+    component: TodosComponent,
+    canActivate: [LoginGuard],
   },
   {
-    path:'login',
-    component:LoginComponent
-
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:'favorite',
-    component:FavoritesComponent,
-    canActivate: [LoginGuard]
-  }
+    path: 'favorite',
+    component: FavoritesComponent,
+    canActivate: [LoginGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
