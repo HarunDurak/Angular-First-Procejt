@@ -21,12 +21,19 @@ export class ProductsComponent implements OnInit {
       this.apiService
         .addFav({ name: name, favorite: id })
         .subscribe((res: any) => {
+          console.log(res);
+          console.log(data);
+
+
           window.location = '/products' as any;
         });
     } else {
       this.apiService
         .removeFav({ name: name, favorite: id })
         .subscribe((res: any) => {
+          console.log(res);
+          console.log(data);
+
           window.location = '/products' as any;
         });
     }
