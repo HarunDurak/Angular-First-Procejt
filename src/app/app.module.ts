@@ -12,7 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductsComponent,
     HomeComponent,
     LoginComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,

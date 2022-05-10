@@ -4,10 +4,13 @@
   top: 10px;
   cursor: pointer;
 }
-.fvrt-btn{
+.fvrt-btn {
   float: left;
   width: 39px;
   height: 39px;
-  background: url(https://cdn.dsmcdn.com/web/production/favorite-heart.svg);
+  background: url(https://cdn.dsmcdn.com/web/production/favorite-heart.svg) no-repeat;
   background-size: cover;
+}
+i:hover{
+  background: url(https://cdn.dsmcdn.com/web/assets/favorite-heart-active.svg) no-repeat;
 }

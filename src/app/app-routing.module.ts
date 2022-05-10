@@ -5,6 +5,7 @@ import { LoginGuard } from './guards/login.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './products/products.component';
+import { TodosComponent } from './todos/todos.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,12 @@ const routes: Routes = [
   {
     path:'products',
     component:ProductsComponent
+  },
+  {
+    path:'todos',
+    component:TodosComponent,
+    canActivate: [LoginGuard]
+
   },
   {
     path:'login',

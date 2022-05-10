@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row" style="margin-right: 0.5rem;">
+    <div class="input-group mb-3">
+      <input
+        #inpt
+        type="text"
+        class="d-block form-control"
+        placeholder="Todo"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      />
+      <div class="input-group-prepend">
+        <button
+          [hidden]="!editMode"
+          class="btn btn-info"
+          (click)="update(inpt)"
+        >
+          Güncelle
+        </button>
+        <button
+          [disabled]="editMode"
+          class="btn btn-dark"
+          (click)="add(inpt)"
+        >
+          Ekle
+        </button>
+        <button
+          [hidden]="!editMode"
+          class="btn btn-danger"
+          (click)="cancel(inpt)"
+        >
+          İptal Et
+        </button>
+      </div>
+
+      <br />
+    </div>
+    <div class="mb-3">
+      <input
+        #inptSearch
+        (input)="search(inptSearch.value)"
+        type="text"
+        class="d-block form-control"
+        placeholder="Search"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <ul class="list-group" *ngFor="let todo of filteredData">
+      <li
+        [ngClass]="todo.completed ? 'bg-light text-danger' : ''"
+        class="list-group-item d-flex justify-content-between"
+      >
+        <div style="padding: 0.5rem;" appTodoBold>{{ todo.title }}</div>
+
+        <div class="d-flex justify-content-between">
+          <div style="padding: 0.5rem;"  class="form-check form-switch">
+            <input
+              [ngStyle]="
+                (todo.completed && {
+                  zoom: '1.5',
+                  backgroundColor: 'green'
+                }) || {
+                  zoom: '1'
+                }
+              "
+              (change)="todo.completed = !todo.completed"
+              [checked]="todo.completed"
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+            />
+            <label
+              class="form-check-label"
+              for="flexSwitchCheckDefault"
+            ></label>
+          </div>
+          <button class="btn btn-dark" (click)="edit(todo.id, inpt)">
+            Düzenle
+          </button>
+          <button class="btn btn-close m-2" (click)="delete(todo.id)"></button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
